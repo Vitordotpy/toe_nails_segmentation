@@ -69,7 +69,7 @@ class Predictor:
         
         processed_base_data_path = get_final_path(1, ['dataset', 'processed'])
         self.x_test_dir = os.path.join(processed_base_data_path, 'test')
-        self.y_test_dir = os.path.join(processed_base_data_path, 'test_labels')
+        self.y_test_dir = os.path.join(processed_base_data_path, 'test_masks')
 
     @staticmethod
     def crop_image(image, target_image_dims=[800,800,3]):

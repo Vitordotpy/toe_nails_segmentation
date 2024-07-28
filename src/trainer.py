@@ -31,10 +31,10 @@ class Trainer:
         #self.device = torch.device("mps" if torch.cuda.is_available() else "cpu")
         processed_base_data_path = get_final_path(1, ['dataset', 'processed'])
         self.x_train_dir = os.path.join(processed_base_data_path, 'train')
-        self.y_train_dir = os.path.join(processed_base_data_path, 'train_labels')
+        self.y_train_dir = os.path.join(processed_base_data_path, 'train_masks')
 
         self.x_valid_dir = os.path.join(processed_base_data_path, 'val')
-        self.y_valid_dir = os.path.join(processed_base_data_path, 'val_labels')
+        self.y_valid_dir = os.path.join(processed_base_data_path, 'val_masks')
 
     def get_model(self):
 

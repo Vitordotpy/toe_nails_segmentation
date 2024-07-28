@@ -30,7 +30,7 @@ class ImageConverter:
         Path(os.path.join(dest_folder, tp)).mkdir(parents=True, exist_ok=True)
         for i in range(len(files)):
             
-            if files[i].split('.')[1] == 'jpg' or files[i].split('.')[1] == 'JPG' or files[i].split('.')[1] == 'jpeg':
+            if files[i].split('.')[1] == 'jpg' or files[i].split('.')[1] == 'JPG' or files[i].split('.')[1] == 'jpeg' or files[i].split('.')[1] == 'JPEG' or files[i].split('.')[1] == 'png' or files[i].split('.')[1] == 'PNG':
                 
                 img_path = os.path.join(base_folder, tp, files[i])
                 print(img_path)
@@ -64,23 +64,23 @@ class ImageConverter:
         train_folder = os.path.join(raw_base_path, 'train')
         test_folder = os.path.join(raw_base_path, 'test')
         val_folder = os.path.join(raw_base_path, 'val')
-        train_labels_folder = os.path.join(raw_base_path, 'train_labels')
-        test_labels_folder = os.path.join(raw_base_path, 'test_labels')
-        val_labels_folder = os.path.join(raw_base_path, 'val_labels')
+        train_masks_folder = os.path.join(raw_base_path, 'train_masks')
+        test_masks_folder = os.path.join(raw_base_path, 'test_masks')
+        val_masks_folder = os.path.join(raw_base_path, 'val_masks')
 
         train_files = os.listdir(train_folder)
         test_files = os.listdir(test_folder)
         val_files = os.listdir(val_folder)
-        train_labels_files = os.listdir(train_labels_folder)
-        test_labels_files = os.listdir(test_labels_folder)
-        val_labels_files = os.listdir(val_labels_folder)
+        train_masks_files = os.listdir(train_masks_folder)
+        test_masks_files = os.listdir(test_masks_folder)
+        val_masks_files = os.listdir(val_masks_folder)
 
         self.converter(train_files, raw_base_path, processed_base_path, 'train')
         self.converter(test_files, raw_base_path, processed_base_path, 'test')
         self.converter(val_files, raw_base_path, processed_base_path, 'val')
-        self.converter(train_labels_files, raw_base_path, processed_base_path, 'train_labels')
-        self.converter(test_labels_files, raw_base_path, processed_base_path, 'test_labels')
-        self.converter(val_labels_files, raw_base_path, processed_base_path, 'val_labels')
+        self.converter(train_masks_files, raw_base_path, processed_base_path, 'train_masks')
+        self.converter(test_masks_files, raw_base_path, processed_base_path, 'test_masks')
+        self.converter(val_masks_files, raw_base_path, processed_base_path, 'val_masks')
 
         return
     

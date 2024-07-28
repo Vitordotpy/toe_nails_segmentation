@@ -22,11 +22,11 @@ class Evaluator:
         try:
             path = '/Users/adem/Documents/4-Projeler/74-Segmentation/nail_dataset/new_images/val/.DS_Store'
             os.remove(os.path.join(processed_base_data_path, 'test', '.DS_Store'))
-            os.remove(os.path.join(processed_base_data_path, 'test_labels', '.DS_Store'))
+            os.remove(os.path.join(processed_base_data_path, 'test_masks', '.DS_Store'))
         except:
             pass
         self.x_test_dir = os.path.join(processed_base_data_path, 'test')
-        self.y_test_dir = os.path.join(processed_base_data_path, 'test_labels')
+        self.y_test_dir = os.path.join(processed_base_data_path, 'test_masks')
         self.model = torch.load(model_path, map_location = device)
         self.preprocessing_fn = pickle.load(open(preprocessing_fn_path, 'rb'))
         self.select_class_rgb_values = select_class_rgb_values
